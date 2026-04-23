@@ -114,3 +114,24 @@ def summarize_report():
         "Content-Type": "application/json",
         "Authorization": f"Bearer {API_KEY}"
     }
+
+        response = requests.post(API_URL, headers=headers, json=payload)
+        print(f"API Response Status: {response.status_code}")
+        response.raise_for_status()
+        
+        
+        ai_content = json.loads(raw_data)
+
+        print("\n** ")
+        print(f"Title: {ai_content.get('title', 'N/A')}")
+        print(f"Summary: {ai_content.get('summary', 'N/A')}")
+        print("Action Items:")
+        for item in ai_content.get('action_items', []):
+            print(f"- {item}")
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        if 'response' in locals():
+            text: {response.text}")
+
+if __name__ == "__main__":
