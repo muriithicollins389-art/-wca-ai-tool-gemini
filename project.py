@@ -24,3 +24,67 @@ def extract_text_from_txt(txt_path):
     except Exception as e:
         print(f"Error reading text file: {e}")
         return ""
+def summarize_report():
+    # --- API CONFIGURATION FOR OPENAI ---
+    API_KEY = "process.env.API KEY"
+    API_URL = "https://api.openai.com/v1/chat/completions"
+
+    # --- USER INPUT METHOD SELECTION ---
+    print("--- Report Summarizer Tool ---")
+    print("Choose input method:")
+    print("1. Paste text directly")
+    print("2. Upload PDF file")
+    print("3. Upload TXT file")
+    
+    
+    
+    report_text = ""
+    
+    if choice == '1':
+        # Direct text paste
+        print("\nPaste your report below:")
+        lines = []
+        try:
+            while True:
+                line = input()
+                lines.append(line)
+        except EOFError:
+            pass
+        
+    
+    elif choice == '2':
+        # PDF file upload
+        pdf_path = input("Enter PDF file path: ").strip().strip('"').strip("'")
+        if os.path.exists(pdf_path):
+            print("Extracting text from PDF...")
+            report_text = extract_text_from_pdf(pdf_path)
+            if report_text:
+                print(f"Successfully extracted {len(report_text)} characters")
+            else:
+                print("Could not extract text from PDF")
+        else:
+            print("File not found!")
+            return
+    
+    elif choice == '3':
+        # TXT file upload
+        txt_path = input("Enter TXT file path: ").strip().strip('"').strip("'")
+        if os.path.exists(txt_path):
+            print("Reading text file...")
+            report_text = extract_text_from_txt(txt_path)
+            if report_text:
+                print(f"Successfully read {len(report_text)} characters")
+            else:
+                print("Could not read text file")
+        else:
+            print("File not found!")
+            return
+    
+    else:
+        print("Invalid choice!")
+        return
+    
+    if not report_text.strip():
+        print("No text to summarize. Exiting.")
+        return
+    
