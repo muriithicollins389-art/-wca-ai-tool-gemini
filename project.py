@@ -87,4 +87,30 @@ def summarize_report():
     if not report_text.strip():
         print("No text to summarize. Exiting.")
         return
+       # --- DESIGNED PROMPT ---
+    system_instruction = (
+        f"Role: Expert Executive Assistant. "
+        f"Task: Summarize the text in a professional tone. "
+        f"Context: User is preparing for a meeting. "
+        f"Return ONLY valid JSON. "
+        f'Output Format: {{"title": str, "summary": str, "action_items": list}}'
+    )
+          # API INTEGRATION FOR OPENAI ---
     
+    if len(report_text) > 1000:
+        print(f"Text is long ({len(report_text)} chars), truncating to first 12000 chars")
+        report_text = report_text[:1000]
+    
+    payload = {
+        "model": "gpt-3.5-turbo",
+        "messages": [
+            {"role": "system", "content": system_instruction},
+            {"role": "user", "content": report_text}
+        ],
+        "response_format": {"type": "json_object"}
+    }
+
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {API_KEY}"
+    }
