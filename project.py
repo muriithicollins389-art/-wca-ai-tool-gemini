@@ -56,7 +56,7 @@ def summarize_report():
                 lines.append(line)
         except EOFError:
             pass
-        
+        report_text = "\n".join(lines)
     
     elif choice == '2':
         # PDF file upload
