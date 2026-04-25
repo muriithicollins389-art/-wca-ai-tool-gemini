@@ -105,7 +105,7 @@ def summarize_report():
           # API INTEGRATION FOR OPENAI ---
     
     if len(report_text) > 1000:
-        print(f"Text is long ({len(report_text)} chars), truncating to first 12000 chars")
+        print(f"Text is long ({len(report_text)} chars), truncating to first 1000 chars")
         report_text = report_text[:1000]
     
     payload = {
