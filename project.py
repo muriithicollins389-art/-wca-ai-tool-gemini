@@ -127,7 +127,7 @@ def summarize_report():
         response.raise_for_status()
         
         raw_data=response.json()
-        ai_content = json.loads(raw_data)
+        ai_content = json.loads(raw_data)(raw_data['choices'][0]['message']['content'])
 
         print("\n** ")
         print(f"Title: {ai_content.get('title', 'N/A')}")
