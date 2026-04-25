@@ -28,6 +28,7 @@ def extract_text_from_txt(txt_path):
     except Exception as e:
         print(f"Error reading text file: {e}")
         return ""
+        
 def summarize_report():
 # API CONFIGURATION FOR OPENAI 
     API_KEY = os.getenv("OPENAI_API_KEY")
