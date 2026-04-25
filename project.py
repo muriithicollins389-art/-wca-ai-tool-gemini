@@ -34,6 +34,7 @@ def summarize_report():
     if not API_KEY:
         print("Error: OPENAI_API_KEY not found in environment variables!")
         print("Please create a .env file with your API key or set the environment variable.")
+        return
     API_URL = "https://api.openai.com/v1/chat/completions"
     # --- USER INPUT METHOD SELECTION ---
     print("--- Report Summarizer Tool ---")
