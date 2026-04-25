@@ -126,7 +126,7 @@ def summarize_report():
         print(f"API Response Status: {response.status_code}")
         response.raise_for_status()
         
-        
+        raw_data=response.json()
         ai_content = json.loads(raw_data)
 
         print("\n** ")
