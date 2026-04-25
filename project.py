@@ -93,7 +93,7 @@ def summarize_report():
     if not report_text.strip():
         print("No text to summarize. Exiting.")
         return
-   ton_choice=imput("\nProfession")
+   ton_choice=imput("\nProfession, casual,technicall")
        # --- DESIGNED PROMPT ---
     system_instruction = (
         f"Role: Expert Executive Assistant. "
@@ -104,9 +104,9 @@ def summarize_report():
     )
           # API INTEGRATION FOR OPENAI ---
     
-    if len(report_text) > 1000:
-        print(f"Text is long ({len(report_text)} chars), truncating to first 1000 chars")
-        report_text = report_text[:1000]
+    if len(report_text) > 1200:
+        print(f"Text is long ({len(report_text)} chars), truncating to first 1200 chars")
+        report_text = report_text[:1200]
     
     payload = {
         "model": "gpt-3.5-turbo",
