@@ -139,7 +139,7 @@ def summarize_report():
     except Exception as e:
         print(f"An error occurred: {e}")
         if 'response' in locals():
-            text: {response.text}")
+            print(f"Response text: {response.text}")
 
 if __name__ == "__main__":
     summarize_report()
