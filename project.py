@@ -93,6 +93,7 @@ def summarize_report():
     if not report_text.strip():
         print("No text to summarize. Exiting.")
         return
+   ton_choice=imput("\nProfession")
        # --- DESIGNED PROMPT ---
     system_instruction = (
         f"Role: Expert Executive Assistant. "
