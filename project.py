@@ -97,7 +97,9 @@ def summarize_report():
     if not report_text.strip():
         print("No text to summarize. Exiting.")
         return
+        
    tone_choice =input("\nProfession, casual,technical").strip()
+
    # DESIGNED PROMPT
     system_instruction = (
         f"Role: Expert Executive Assistant. "
