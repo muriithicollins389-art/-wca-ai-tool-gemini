@@ -141,3 +141,4 @@ def summarize_report():
             text: {response.text}")
 
 if __name__ == "__main__":
+    summarize_report()
