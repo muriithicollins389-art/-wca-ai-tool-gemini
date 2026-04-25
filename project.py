@@ -108,7 +108,8 @@ def summarize_report():
         f"Return ONLY valid JSON. "
         f'Output Format: {{"title": str, "summary": str, "action_items": list}}'
     )
-    # API INTEGRATION FOR OPENAI
+   
+# API INTEGRATION FOR OPENAI
     
     if len(report_text) > 1200:
         print(f"Text is long ({len(report_text)} chars), truncating to first 1200 chars")
