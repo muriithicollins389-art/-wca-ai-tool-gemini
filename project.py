@@ -121,7 +121,7 @@ def summarize_report():
         "Content-Type": "application/json",
         "Authorization": f"Bearer {API_KEY}"
     }
-
+    try
         response = requests.post(API_URL, headers=headers, json=payload)
         print(f"API Response Status: {response.status_code}")
         response.raise_for_status()
