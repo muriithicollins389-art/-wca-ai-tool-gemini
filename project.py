@@ -104,7 +104,7 @@ def summarize_report():
    
 system_instruction = (
         f"Role: Expert Executive Assistant. "
-        f"Task: Summarize the text in a professional tone. "
+        f"Task: Summarize the text in a  {tone_choice}tone. "
         f"Context: User is preparing for a meeting. "
         f"Return ONLY valid JSON. "
         f'Output Format: {{"title": str, "summary": str, "action_items": list}}'
