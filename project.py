@@ -42,7 +42,7 @@ def summarize_report():
     print("2. Upload PDF file")
     print("3. Upload TXT file")
     
-    
+    choice= input("Enter choice (1/2/3): ").strip()
     
     report_text = ""
     
