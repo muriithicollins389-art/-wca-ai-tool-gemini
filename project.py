@@ -29,14 +29,14 @@ def extract_text_from_txt(txt_path):
         print(f"Error reading text file: {e}")
         return ""
 def summarize_report():
-    # --- API CONFIGURATION FOR OPENAI ---
+# API CONFIGURATION FOR OPENAI 
     API_KEY = os.getenv("OPENAI_API_KEY")
     if not API_KEY:
         print("Error: OPENAI_API_KEY not found in environment variables!")
         print("Please create a .env file with your API key or set the environment variable.")
         return
     API_URL = "https://api.openai.com/v1/chat/completions"
-    # --- USER INPUT METHOD SELECTION ---
+# USER INPUT METHOD SELECTION
     print("--- Report Summarizer Tool ---")
     print("Choose input method:")
     print("1. Paste text directly")
@@ -95,7 +95,7 @@ def summarize_report():
         print("No text to summarize. Exiting.")
         return
    tone_choice =imput("/nProfession, casual,technical").strip()
-       # --- DESIGNED PROMPT ---
+   # DESIGNED PROMPT
     system_instruction = (
         f"Role: Expert Executive Assistant. "
         f"Task: Summarize the text in a professional tone. "
@@ -103,7 +103,7 @@ def summarize_report():
         f"Return ONLY valid JSON. "
         f'Output Format: {{"title": str, "summary": str, "action_items": list}}'
     )
-          # API INTEGRATION FOR OPENAI ---
+    # API INTEGRATION FOR OPENAI
     
     if len(report_text) > 1200:
         print(f"Text is long ({len(report_text)} chars), truncating to first 1200 chars")
