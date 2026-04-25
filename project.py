@@ -2,6 +2,10 @@ import json
 import requests
 import PyPDF2
 import os
+from dotenv import load_dotenv
+
+#load environment variables from .env file
+load_dotenv()
 
 def extract_text_from_pdf(pdf_path):
     """Extract text from PDF file"""
