@@ -101,7 +101,8 @@ def summarize_report():
    tone_choice =input("\nProfession, casual,technical").strip()
 
    # DESIGNED PROMPT
-    system_instruction = (
+   
+system_instruction = (
         f"Role: Expert Executive Assistant. "
         f"Task: Summarize the text in a professional tone. "
         f"Context: User is preparing for a meeting. "
