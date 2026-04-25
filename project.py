@@ -30,9 +30,11 @@ def extract_text_from_txt(txt_path):
         return ""
 def summarize_report():
     # --- API CONFIGURATION FOR OPENAI ---
-    API_KEY = "process.env.API KEY"
+    API_KEY = os.getenv("OPENAI_API_KEY")
+    if not API_KEY:
+        print("Error: OPENAI_API_KEY not found in environment variables!")
+        print("Please create a .env file with your API key or set the environment variable.")
     API_URL = "https://api.openai.com/v1/chat/completions"
-
     # --- USER INPUT METHOD SELECTION ---
     print("--- Report Summarizer Tool ---")
     print("Choose input method:")
