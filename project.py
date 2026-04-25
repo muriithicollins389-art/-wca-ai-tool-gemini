@@ -130,7 +130,7 @@ def summarize_report():
         raw_data=response.json()
         ai_content = json.loads(raw_data)(raw_data['choices'][0]['message']['content'])
 
-        print("\n** ")
+        print("\n** REPORT SUMMARY **")
         print(f"Title: {ai_content.get('title', 'N/A')}")
         print(f"Summary: {ai_content.get('summary', 'N/A')}")
         print("Action Items:")
